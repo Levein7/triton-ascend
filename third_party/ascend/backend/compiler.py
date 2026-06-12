@@ -1,4 +1,4 @@
-# Copyright (c) Huawei Technologies Co., Ltd. 2025. All rights reserved.
+﻿# Copyright (c) Huawei Technologies Co., Ltd. 2025. All rights reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -1067,7 +1067,7 @@ def ttir_to_npubin(mod, metadata, opt):
                 _compile_option_list += [f"--disable-fma"]
 
             enable_libdevice_simt = triton_enable_libdevice_simt()
-            if (enable_libdevice_simt):
+            if not enable_libdevice_simt:
                 bisheng_options = metadata["bisheng_options"]
                 if bisheng_options is not None:
                     _compile_option_list += [
